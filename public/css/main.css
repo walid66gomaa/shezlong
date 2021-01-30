@@ -2,3 +2,89 @@
     font-family: Cairo-regular;
     src: url('/fonts/Cairo-Regular.ttf');
 }
+
+body {
+    margin: 0;
+     font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: right;
+    background-color: #f4f6f9;
+    direction: rtl;
+    unicode-bidi: isolate;
+}
+* {
+    font-family: Cairo-regular;
+}
+
+/* start header section */
+.header {
+
+	width: 100%;
+	align-items: center;
+	background: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .16);
+	z-index: 30;
+   
+
+
+}
+
+.header .navbar
+
+{
+    padding: 0px 1px;
+    
+}
+
+ .header-logo {
+    max-height: 60px;
+    margin: -3px 0;
+}
+
+.header ul {
+	list-style: none;
+	padding: initial;
+	margin: initial
+}
+.header ul li a {
+    color: #212529;
+    font-weight: 400px;
+}
+
+.header ul li {
+    float: left;
+	
+    font-size: 14px;
+    cursor: pointer;
+    padding: unset;
+    
+}
+
+
+
+@media(min-width:1200px)
+{
+        .margin-15
+        {
+            margin-right: 15.333333%  !important;
+
+        }
+}
+@media  (max-width:991px) {
+	.header ul li {
+		float: none!important
+	}
+	.header ul li,
+	.header ul li:first-child {
+		margin-top: 15px
+	}
+	.header .navbar-collapse {
+		padding-bottom: 15px
+	}
+}
+
+
+
+/* end header section */
