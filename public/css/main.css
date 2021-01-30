@@ -132,3 +132,68 @@ body {
 
 
 /* end footer  */
+/* start sucsses-steps section */
+
+.sucsses-steps  {
+	min-height: 160px;
+	background: #3da8c0;
+	display: flex;
+	align-items: center
+}
+
+.sucsses-steps .steps-title{
+
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.margin-md-16
+{
+    margin-right: 16.666667%;
+}
+.sucsses-steps  .seprator  {
+	padding: 0
+}
+
+.sucsses-steps  .seprator {
+	height: 1px;
+	content: "";
+	background: #fff;
+	display: flex;
+	align-items: center;
+	margin-top: 14px
+}
+
+.sucsses-steps  .sucsses-step  {
+	border: 1.5px solid #fff;
+	border-radius: 15px;
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+	padding: 2px 10px
+}
+
+.sucsses-steps  .sucsses-step.active  {
+	color: #3da8c0;
+	background: #fff
+}
+
+@media(max-width:767.8px) {
+
+    .sucsses-steps 
+    {
+        display: none;
+    }
+
+    .margin-md-16
+{
+    margin-right: unset;
+}
+	
+	.sucsses-steps  .seprator {
+		height: 25px;
+		width: 1px;
+		margin: 0 auto
+
+}
+}
