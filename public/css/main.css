@@ -197,3 +197,150 @@ body {
 
 }
 }
+
+
+
+/* start section search resulr section  */
+a:hover {
+
+    text-decoration: none;
+}
+.search-result .card
+{
+    padding-top: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+.search-result .card .card-body {
+  
+    padding: 0 10px;
+}
+
+.search-result .card .img-div
+{
+    
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.card-img-top {
+    
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card-doc-name {
+    white-space: nowrap;
+    max-width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #3da8c0;
+    font-size: 16px!important;
+}
+
+.card-doc-title{
+
+    font-size: 12px;
+    color: #666669;
+    min-height: 36px;
+    margin-top: 8px
+}
+.card-doc-rates
+{
+  font-size: 12px;
+}
+.card-doc-rates .card-doc-stars {
+
+   
+}
+.card-doc-rates .card-doc-stars .star{
+ color: #ffc10e; 
+ margin-right: 4px;
+ margin-left: 4px;
+}
+
+.card-doc-rates .rate{
+    margin-left: 5px
+}
+.card-doc-speciality
+{
+    color: #4d4d4f;
+    font-size: 12px;
+    min-height: 36px;
+    margin-top: 8px;
+}
+
+.card-doc-prices{
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+.card-doc-prices .card-doc-fees {
+    width: 50%;
+    color: #4d4d4f;
+    font-size: 14px;
+}
+.card-doc-prices .card-doc-sessions {
+    width: 50%;
+    color: #666669;
+    font-size: 12px;
+}
+
+.card-doc-prices .fa
+{
+color: #3da8c0;
+font-size: 18px;
+vertical-align: middle;
+margin-left: 2px;
+}
+
+.card-doc-buttons
+{
+  
+    padding-top: 8px;
+    cursor: pointer;
+    font-size: 13px!important;
+}
+.card-doc-view-profile , .card-doc-book
+{
+width: 50%;
+padding-top: 8px;
+padding-bottom: 8px;
+text-align: center;
+}
+.card-doc-view-profile
+{
+    background: #ccc;
+    color: #4d4d4f;
+}
+
+.card-doc-book
+{
+    background: #3da8c0;
+    color: #fff;
+}
+
+.card-doc-book:hover {
+	background: #399cb3;
+	color: #fff
+}
+
+
+.card-doc-view-profile:hover {
+	background: #bfbfbf;
+	color: #4d4d4f
+}
+@media (min-width: 768px){
+
+    .col-padding {
+       padding-left: 6px;
+       padding-right: 6px;
+    }
+}
+/* start section search result section  */
