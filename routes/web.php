@@ -15,7 +15,7 @@ use App\Http\Controllers\FrontEnd\TherapistController;
 */
 
 Route::get('/', function () {
-    factory('App\Models\therapist'::class, 10)->create();
+ 
     return view('frontend/index');
 });
 
