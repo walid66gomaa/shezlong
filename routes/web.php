@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontEnd\TherapistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    factory('App\Models\therapist'::class, 10)->create();
     return view('frontend/index');
 });
+
+Route::get('/search', [TherapistController::class, 'search'])->name('search');
