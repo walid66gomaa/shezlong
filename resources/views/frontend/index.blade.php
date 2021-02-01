@@ -30,7 +30,7 @@
         <div class="row">
 
                 <div class="col-md-3  col-padding">
-                  <button type="submit">Search</button>
+                  <button  class= "btn btn-search rounded-top sm-no-border-radius d-flex btn"type="submit">بحث الان</button>
     
                 </div>
 
@@ -229,7 +229,7 @@
                    @foreach ($therapists as $therapist)
                        
                  
-                    <div class="col-md-4 col-padding">
+                    <div class=" col-md-4  col-sm-6 col-padding">
 
                         {{-- doctor card --}}
                         <div class="card">

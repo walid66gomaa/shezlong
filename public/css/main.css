@@ -231,6 +231,16 @@ body {
 
 }
 
+.btn-search
+{
+    width: 100%;
+    background: #3da8c0;
+  
+    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* end section search input  */
 /* start section search resulr section  */
  a:hover {
@@ -374,6 +384,17 @@ text-align: center;
        padding-left: 6px;
        padding-right: 6px;
     }
+}
+@media (max-width: 768px){
+
+    .col-padding {
+       padding-left: 2px;
+       padding-right: 2px;
+    }
+    .search-result .card
+{
+    margin-top: 10px;
+}
 }
 /* start section search result section  */
 /* start section filters */
