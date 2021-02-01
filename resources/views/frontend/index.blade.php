@@ -22,9 +22,147 @@
 
     <div class="container">
         <div class="row">
-           
+            {{-- start filter --}}
+            <div class="col-md-3 col-padding ">
+                <div class="filters">
+
+
+                    <div class="filters-title rounded-top sm-no-border-radius d-flex">
+                        <span class="">التصنيف</span>
+                        <span class="clear-filter">مسح التصنيف</span>
+                    </div>
+                    {{-- filters body --}}
+                    <div class="filters-body">
+                        <div class=" times-text d-flex align-items-center">
+                            <span class=""><i class="fa fa-clock-o" aria-hidden="true"></i> المواعيد المحدده والمده
+                            </span>
+                        </div>
+                        <div class="filter-check-box d-flex">
+                            <div class="form-check ">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">اليوم</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">هذا الاسبوع</label>
+                            </div>
+                        </div>
+
+                        <div class="filter-date">
+                            <span>متاح من : اختر ميعاد</span>
+                            <input class=" form-control " placeholder="اختر تاريخ">
+                        </div>
+                        <div class="filter-date">
+                            <span>متاح إلى: اختر ميعاد</span>
+                            <input class=" form-control " placeholder="اختر تاريخ" disabled>
+                        </div>
+                        {{-- duration --}}
+                        <span class="duration">المده : </span>
+                        <div class="filter-check-box d-flex">
+                            <div class="form-check ">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">30 دقيقه</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">60 دقيقه</label>
+                            </div>
+                        </div>
+                        {{-- duration --}}
+                        {{-- gender --}}
+                        <div class="gender">
+                            <div class=" times-text d-flex align-items-center">
+                                <span class=""><i class="fa fa-venus-mars"></i> الجنس
+                                </span>
+                            </div>
+                            <div class="filter-check-box d-flex">
+                                <div class="form-check ">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">30 دقيقه</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">60 دقيقه</label>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- end gender --}}
+                        {{-- gender --}}
+                        <div class="filter-rate">
+                            <div class=" times-text d-flex align-items-center">
+                                <span class=""><i class="fa fa-star" aria-hidden="true"></i> التقيم
+                                </span>
+                            </div>
+                            <div class="d-flex">
+                                <div class="filter-rate-stars ">
+                                    @for ($j = 0; $j <5; $j++) <i class="fa fa-star" aria-hidden="true"></i>
+
+                                        @endfor
+                                        <span class="">
+                                            وما فوق
+                                        </span>
+                                </div>
+
+                            </div>
+                        </div>
+                        {{-- end gender --}}
+
+                        {{-- global --}}
+
+                        <div class="global">
+                            <div class=" times-text d-flex align-items-center">
+                                <span class=""><i class="fa fa-globe" aria-hidden="true"></i> اللغه والبلد
+                                </span>
+                            </div>
+
+
+                            <select class="form-control" name="" id="">
+                                <option>اختر اللغه</option>
+                                <option></option>
+                                <option></option>
+                            </select>
+
+                            <select class="form-control" name="" id="">
+                                <option>اختر البلد</option>
+                                <option></option>
+                                <option></option>
+                            </select>
+
+
+                        </div>
+
+                        {{--end global --}}
+
+                        {{-- filter price --}}
+
+                        <div class="filter-prices">
+                            <div class=" times-text d-flex align-items-center">
+                                <span class=""><i class="fa fa-money" aria-hidden="true"></i> تكلفة الجلسة (جنيه)
+                                </span>
+                            </div>
+
+                            <div class="filter-price">
+                                <span>اقل من 150 </span>
+                                <span>اقل من من 15 الي 200 </span>
+                                <span>من 200 الي 300 </span>
+                                <span>من 300 الي 500 </span>
+                                <span>اكثر من 500</span>
+
+                            </div>
+                        </div>
+                        {{-- end filter price --}}
+
+
+                    </div>
+                    {{-- filters body --}}
+                </div>
+
+            </div>
+            {{-- end filter --}}
             {{-- start section search result --}}
             <div class="col-md-9 search-result">
+
+
                 <div class="row">
                     @for ($i = 0; $i < 6; $i++) <div class="col-md-4 col-padding">
 

@@ -343,4 +343,142 @@ text-align: center;
        padding-right: 6px;
     }
 }
-/* start section search result section  */
+/* start section search result section  */ 
+
+/* start section filters */
+.filters
+{
+    background: #fff; 
+    min-height: 100vh;
+    box-shadow: 0 0 2px rgba(0,0,0,.16);
+    padding-bottom: 10px;
+    
+}
+.filters-title
+{
+    background: #3da8c0;
+    padding: 8px 16px;
+    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+.filters-body
+{
+    padding-right: 15px;
+}
+
+.container {
+    padding-right: 23px;
+    padding-left: 23px;
+}
+
+.times-text
+{
+    color: #3da8c0;  
+    
+    font-size: 14px;
+    
+    font-weight: 500;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+.times-text .fa
+{
+   
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.filter-check-box
+{
+   /* margin-top: 16px;  */
+    align-items: center;
+}
+.filter-check-box .form-check
+{
+    margin-left: 15px;
+    color: #4d4d4f;
+}
+
+.filter-check-box .form-check .form-check-input {
+    box-sizing: border-box;
+    height: 16px;
+    line-height: 0;
+    margin: auto;
+    order: 0;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 16px;
+    flex-shrink: 0
+}
+.filter-check-box .form-check-label
+{
+    line-height: 24px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: inherit;
+    align-items: baseline;
+    vertical-align: middle;
+    display: inline-flex;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.filter-date
+{
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+}
+
+.filter-date span  ,.filters .duration
+{
+    color: #4d4d4f;
+}
+
+.filter-date .form-control , .global .form-control
+{
+    margin-top: 8px;
+    width: 94%;
+}
+.filter-date .form-control:focus
+{
+   box-shadow: unset;
+}
+
+.filter-rate-stars .fa
+{
+  font-size: 20px;
+  color: #ddd;
+  margin: 5px;
+  vertical-align: middle;
+}
+.global .times-text
+{
+    padding-bottom: 0;
+}
+.global .form-control
+{
+    margin-top: 8px;
+    width: 94%;
+}
+
+.filter-prices .filter-price span
+{
+    padding: 4px;
+    margin-left: 12p;
+    margin-top: 8px;
+    border-radius: 2px;
+    cursor: pointer;
+    background: #ccc;
+    color: #4d4d4f;
+    display: inline-block;
+    font-size: 12px;
+}
+/* end section filters */
+
+
