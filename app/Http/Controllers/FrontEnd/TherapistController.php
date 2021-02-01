@@ -25,6 +25,7 @@ class TherapistController extends Controller
 				array($filters->therapistName)
 			);
 		}
+		
 		if ($filters->has('specialtyName') &&  !empty(  $filters->specialtyName)) {
 
 			$specialty = Specialty::select('id')->where('specialtyName', $filters->specialtyName)->first();
