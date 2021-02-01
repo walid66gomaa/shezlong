@@ -36,7 +36,7 @@
 
             <div class="col-md-3 mr-md-250 col-padding">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="بحث باسم المعالج" name="therapistName" >
+                    <input type="text" class="form-control" placeholder="بحث باسم المعالج" name="therapistName" value="{{ Request::get('therapistName')  }}" >
 
                 </div>
 
@@ -46,9 +46,9 @@
                 <div class="form-group">
 
                     <select class="depart custom-select" name="specialtyName" id="">
-                        <option value=""   selected >جميع التخصصات</option>
+                        <option value=""  >جميع التخصصات</option>
                         @foreach ($specialties as $specialty)
-                        <option value="{{$specialty->specialtyName}}">{{$specialty->specialtyName}}</option>
+                        <option @if (Request::get('specialtyName')==$specialty->specialtyName) selected @endif  value="{{$specialty->specialtyName}}">{{$specialty->specialtyName}}</option>
                             
                         @endforeach
                      
@@ -60,10 +60,10 @@
                 <div class="form-group">
 
                     <select class="depart custom-select" name="orderBy" id="">
-                        <option   value="" selected>رتب حسب اختر</option>
-                        <option value="price_ASC">السعر : من الأقل الي الاعلي</option>
-                        <option value="price_DESC">السعر: من الاعلي الي الاقل</option>
-                        <option value="rate_DESC">الأعلي تقيم</option>
+                        <option  @if (Request::get('orderBy')=='') selected @endif  value="" >رتب حسب اختر</option>
+                        <option @if (Request::get('orderBy')=='price_ASC') selected @endif value="price_ASC" >السعر : من الأقل الي الاعلي</option>
+                        <option  @if (Request::get('orderBy')=='price_DESC') selected @endif value="price_DESC">السعر: من الاعلي الي الاقل</option>
+                        <option @if (Request::get('orderBy')=='rate_DESC') selected @endif value="rate_DESC">الأعلي تقيم</option>
                     </select>
                 </div>
 
