@@ -1,22 +1,86 @@
 @extends('frontend.layouts.app')
 
 @section('title', config('app.name') . ' | ' . __('home'))
+
 @section('content')
-<section   class=" sucsses-steps">
-    <div   class="container">
-        <div   class="row text-white">
-            <div   class="col-md-12 text-center steps-title">3 خطوات نحو حياة افضل </div>
 
-            <div   class="col-md-2 margin-md-16  sucsses-step active">اختار المعالج</div>
-            <div   class="col-md-1 seprator"></div>
+<section class=" sucsses-steps">
+    <div class="container">
+        <div class="row text-white">
+            <div class="col-md-12 text-center steps-title">3 خطوات نحو حياة افضل </div>
 
-            <div   class="col-md-2  sucsses-step">حدد التاريخ والوقت</div>
-            <div   class="col-md-1 seprator"></div>
-            
-            <div   class="col-md-2  sucsses-step">أكمل عملية الدفع</div>
+            <div class="col-md-2 margin-md-16  sucsses-step active">اختار المعالج</div>
+            <div class="col-md-1 seprator"></div>
+
+            <div class="col-md-2  sucsses-step">حدد التاريخ والوقت</div>
+            <div class="col-md-1 seprator"></div>
+
+            <div class="col-md-2  sucsses-step">أكمل عملية الدفع</div>
         </div>
     </div>
 </section>
+
+{{-- start search section --}}
+
+<section class="search-inputs">
+
+
+    <div class="container">
+    <form action="{{ url('/search') }}" method="get">
+        <div class="row">
+
+                <div class="col-md-3  col-padding">
+                  <button type="submit">Search</button>
+    
+                </div>
+
+            <div class="col-md-3 mr-md-250 col-padding">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="بحث باسم المعالج" name="therapistName" >
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 col-padding">
+                <div class="form-group">
+
+                    <select class="depart custom-select" name="specialtyName" id="">
+                        <option value=""   selected >جميع التخصصات</option>
+                        @foreach ($specialties as $specialty)
+                        <option value="{{$specialty->specialtyName}}">{{$specialty->specialtyName}}</option>
+                            
+                        @endforeach
+                     
+                    </select>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-padding">
+                <div class="form-group">
+
+                    <select class="depart custom-select" name="orderBy" id="">
+                        <option   value="" selected>رتب حسب اختر</option>
+                        <option value="price_ASC">السعر : من الأقل الي الاعلي</option>
+                        <option value="price_DESC">السعر: من الاعلي الي الاقل</option>
+                        <option value="rate_DESC">الأعلي تقيم</option>
+                    </select>
+                </div>
+
+            </div>
+            
+            
+        </div>
+    </form>
+
+
+    </div>
+
+
+</section>
+
+{{-- end search section --}}
+
 
 <section class="">
 
@@ -161,40 +225,43 @@
             {{-- end filter --}}
             {{-- start section search result --}}
             <div class="col-md-9 search-result">
-
-
                 <div class="row">
-                    @for ($i = 0; $i < 6; $i++) <div class="col-md-4 col-padding">
+                   @foreach ($therapists as $therapist)
+                       
+                 
+                    <div class="col-md-4 col-padding">
 
                         {{-- doctor card --}}
                         <div class="card">
                             <div class="img-div">
 
-                                <img class="card-img-top"
-                                    src="https://scontent.shezlong.com/therapist_profile_pictures/652606c1683b0de24ac2ea25ed62aa1c.png"
-                                    alt="Card image cap">
+                                <img class="card-img-top"  src="{{ asset(therapist_image_path($therapist->img)) }}" alt="Card image cap">
+                                {{-- <img class="card-img-top"  src="{{ asset('images/therapist_profile/'.$therapist->img ) }}" alt="Card image cap"> --}}
                             </div>
                             <div class="card-body">
                                 <div class=" d-flex align-items-center justify-content-center">
-                                    <div class="card-doc-name "> شريف احمد عبد اللطيف</div>
+                                    <div class="card-doc-name ">{{ $therapist->name }}</div>
                                 </div>
                                 <div class=" d-flex align-items-center justify-content-center">
-                                    <div class="card-doc-title "> دكتوراه الصحة النفسية والعلاج النفسي </div>
+                                    <div class="card-doc-title "> {{ $therapist->title }} </div>
                                 </div>
                                 <div class=" d-flex align-items-center justify-content-center card-doc-rates">
                                     <div class="card-doc-stars ">
-                                        @for ($j = 0; $j <5; $j++) <span><i class="fa fa-star star"
+                                        @for ($j = 0; $j <$therapist->rate; $j++) <span><i class="fa fa-star star"
                                                 aria-hidden="true"></i></span>
                                             @endfor
                                     </div>
                                     <div class="rate">
-                                        4.25 (306 تقيم )
+                                        {{ $therapist->rate }} ({{ $therapist->rates_count()}} تقيم )
                                     </div>
 
                                 </div>
                                 <div class=" d-flex align-items-center justify-content-center card-doc-speciality">
                                     <div class="">
-                                        متخصص فى اضطراب قلق الفراق، القلق العام، الرهاب الاجتماعي , العلاقات
+                                        متخصص فى 
+                                    @foreach ($therapist->specialties as $specialty)
+                                        {{ $specialty->specialtyName}} , 
+                                    @endforeach
                                     </div>
 
                                 </div>
@@ -202,12 +269,12 @@
                                 <div class=" d-flex align-items-center justify-content-center card-doc-prices">
                                     <div class="card-doc-fees">
                                         <i class="fa fa-money" aria-hidden="true"></i>
-                                        جنيه 260
+                                        جنيه {{ $therapist->price }}
 
                                     </div>
                                     <div class="card-doc-sessions">
                                         <i class="fa fa-play" aria-hidden="true"></i>
-                                        1000+ جلسة
+                                        {{$therapist->sessions_count()  }}+ جلسة
                                     </div>
 
                                 </div>
@@ -226,9 +293,11 @@
 
                             </div>
                         </div>
+                  
                         {{--end doctor card --}}
-                </div>
-                @endfor
+                </div> 
+                 @endforeach
+               
 
             </div>
             {{-- end search result section --}}
@@ -239,7 +308,8 @@
     </div>
 
 
-</section
+</section>
+
 
 
 @endsection

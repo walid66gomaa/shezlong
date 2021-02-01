@@ -5,7 +5,8 @@
 
 body {
     margin: 0;
-     font-size: 1rem;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
@@ -132,6 +133,7 @@ body {
 
 
 /* end footer  */
+
 /* start sucsses-steps section */
 
 .sucsses-steps  {
@@ -198,10 +200,40 @@ body {
 }
 }
 
+/* start select box section */
+
+.search-inputs {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+@media (min-width: 768px){
+
+    .mr-md-25 {
+        margin-right: 25%;
+    }
+}
 
 
+.search-inputs .custom-select
+{
+    
+    background-color: #ffffff;
+    background-image: none;
+
+    appearance: menulist-button;
+    -moz-appearance: menulist-button;
+-webkit-appearance: menulist-button;
+
+
+
+}
+
+/* end section search input  */
 /* start section search resulr section  */
-a:hover {
+ a:hover {
 
     text-decoration: none;
 }
@@ -343,8 +375,7 @@ text-align: center;
        padding-right: 6px;
     }
 }
-/* start section search result section  */ 
-
+/* start section search result section  */
 /* start section filters */
 .filters
 {
@@ -480,5 +511,4 @@ text-align: center;
     font-size: 12px;
 }
 /* end section filters */
-
 
