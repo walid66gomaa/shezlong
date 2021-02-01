@@ -226,6 +226,28 @@
             {{-- start section search result --}}
             <div class="col-md-9 search-result">
                 <div class="row">
+                    <div class=" col-md-4  col-sm-6 col-padding first-card ">
+
+                        {{-- doctor card --}}
+                        <div class="card ">
+                            <div class="">
+
+                                <img class=""  src="https://www.shezlong.com/ar/assets/images/search/recommendation-card-bg.svg" alt="Card image cap">
+                                {{-- <img class="card-img-top"  src="{{ asset('images/therapist_profile/'.$therapist->img ) }}" alt="Card image cap"> --}}
+                            </div>
+                            <div class="card-body">
+                                <div class="text-white choise-doc">
+                                    <span>لا أعرف كيفية </span>
+                                    <span>اختيار المعالج المناسب؟</span>
+                                </div>
+                                <div class="d-flex justify-content-center btn-recomend">
+                                    <button class="btn text-center btn-orange text-white  " type="submit">ترشيحات شيزلونج</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                    @foreach ($therapists as $therapist)
                        
                  

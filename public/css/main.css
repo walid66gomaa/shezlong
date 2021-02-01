@@ -2,6 +2,10 @@
     font-family: Cairo-regular;
     src: url('/fonts/Cairo-Regular.ttf');
 }
+@font-face {
+    font-family: Cairo-bold;
+    src: url('/fonts/Cairo-Bold.ttf');
+}
 
 body {
     margin: 0;
@@ -247,6 +251,7 @@ body {
 
     text-decoration: none;
 }
+
 .search-result .card
 {
     padding-top: 14px;
@@ -254,6 +259,7 @@ body {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 2px;
+    min-height: 365px;
 }
 .search-result .card .card-body {
   
@@ -395,6 +401,49 @@ text-align: center;
 {
     margin-top: 10px;
 }
+}
+
+.first-card .card
+{
+    background: #3da8c0;  
+    padding: unset;
+    text-align: unset;
+}
+.first-card img
+{
+    transform: scaleX(-1);
+}
+
+.first-card .choise-doc
+{
+    padding-left: 10px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    
+}
+.first-card .choise-doc span
+{
+  font-size: 16px;
+  font-family: Cairo-bold;
+  display: block;
+
+}
+
+.first-card .btn-recomend
+{
+    margin-bottom: 30px;
+    margin-top: 30;
+    
+}
+.first-card .btn-recomend .btn-orange
+{
+border-radius: 22px;
+
+   padding: 8px 30px;
+   background: #f4794c;
+   font-size: 14px;
+
+
 }
 /* start section search result section  */
 /* start section filters */
