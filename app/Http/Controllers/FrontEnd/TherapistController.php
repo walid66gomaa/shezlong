@@ -15,13 +15,6 @@ class TherapistController extends Controller
 	public function search(Request $filters)
 	{
 
-		$validated = $filters->validate([
-			'therapistName' => 'string',
-			'orderBy' => 'string',
-			'specialtyName' => 'string',
-
-		]);
-
 		$therapists = (new Therapist)->newQuery();
 
 		if ($filters->has('therapistName') && !empty($filters->therapistName)) {
