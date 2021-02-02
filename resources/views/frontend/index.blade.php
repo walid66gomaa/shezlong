@@ -29,14 +29,11 @@
     <form action="{{ url('/search') }}" method="get">
         <div class="row">
 
-                <div class="col-md-3  col-padding">
-                  <button  class= "btn btn-search rounded-top sm-no-border-radius d-flex btn"type="submit">بحث الان</button>
-    
-                </div>
+               
 
-            <div class="col-md-3 mr-md-250 col-padding">
+            <div class="col-md-3 mr-md-25 col-padding">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="بحث باسم المعالج" name="therapistName" value="{{ Request::get('therapistName')  }}" >
+                    <input type="text" class="form-control" placeholder="بحث باسم المعالج"  id="therapistName" name="therapistName" value="{{ Request::get('therapistName')  }}" >
 
                 </div>
 
@@ -45,7 +42,7 @@
             <div class="col-md-3 col-padding">
                 <div class="form-group">
 
-                    <select class="depart custom-select" name="specialtyName" id="">
+                    <select class="depart custom-select" name="specialtyName" id="specialtyName">
                         <option value=""  >جميع التخصصات</option>
                         @foreach ($specialties as $specialty)
                         <option @if (Request::get('specialtyName')==$specialty->specialtyName) selected @endif  value="{{$specialty->specialtyName}}">{{$specialty->specialtyName}}</option>
@@ -59,7 +56,7 @@
             <div class="col-md-3 col-padding">
                 <div class="form-group">
 
-                    <select class="depart custom-select" name="orderBy" id="">
+                    <select class="depart custom-select" name="orderBy" id="orderBy">
                         <option  @if (Request::get('orderBy')=='') selected @endif  value="" >رتب حسب اختر</option>
                         <option @if (Request::get('orderBy')=='price_ASC') selected @endif value="price_ASC" >السعر : من الأقل الي الاعلي</option>
                         <option  @if (Request::get('orderBy')=='price_DESC') selected @endif value="price_DESC">السعر: من الاعلي الي الاقل</option>
@@ -225,7 +222,7 @@
             {{-- end filter --}}
             {{-- start section search result --}}
             <div class="col-md-9 search-result">
-                <div class="row">
+                <div class="row" id="search-result">
                     <div class=" col-md-4  col-sm-6 col-padding first-card ">
 
                         {{-- doctor card --}}
@@ -335,3 +332,64 @@
 
 
 @endsection
+
+@push('before-scripts')
+    
+
+<script>
+    $(document).ready(function(){
+    
+    //  fetch_therapis_data();
+    
+     function fetch_therapis_data()
+     {
+
+        loading();
+
+        var _therapist_name= $('#therapistName').val();
+       var _specialty_name = $("#specialtyName option:selected" ).val();
+      
+       var _order_by = $("#orderBy option:selected" ).val();
+   
+       
+      $.ajax({
+       url:"{{ route('search') }}",
+       method:'GET',
+       data:{therapistName:_therapist_name , specialtyName:_specialty_name , orderBy:_order_by},
+       dataType:'json',
+       success:function(data)
+       {
+        $('#search-result').html(data.therapists);
+
+           
+        
+       }
+      })
+     }
+    
+     $(document).on('keyup', '#therapistName', function(){
+      var therapistName = $(this).val();
+      fetch_therapis_data();
+     });
+
+     $("#specialtyName ,#orderBy ").change(function(){
+       fetch_therapis_data()
+      
+    });
+
+    
+    
+function loading () {
+
+    var loading='';
+
+    loading += '<div class="col-md-12 loading"> <span> <i class="fa fa-circle-o-notch fa-spin"></i> </span> </div>     '
+    $('#search-result').html(loading);
+
+}
+
+
+
+});
+    </script>
+    @endpush
