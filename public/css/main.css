@@ -581,3 +581,15 @@ border-radius: 22px;
 }
 /* end section filters */
 
+.loading
+{
+    text-align: center;
+    
+    color: #3da8c0;
+}
+
+.loading .fa
+{
+    font-size: 44px;
+}
+
